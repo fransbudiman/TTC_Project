@@ -1,0 +1,27 @@
+package Package1;
+
+
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		final String url = "https://www.ttc.ca/routes-and-schedules#/995/0";
+		
+		try {
+			final Document docs =  Jsoup.connect(url).get();		
+			
+			String docString = docs.toString();
+			System.out.println(docString);
+			
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+	}
+
+}

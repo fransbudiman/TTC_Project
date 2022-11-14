@@ -1,0 +1,46 @@
+package Package1;
+
+
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		final String url = "https://www.tutorialspoint.com/jsoup/jsoup_extract_html.htm";
+		String docString = "";
+		try {
+			final Document docs =  Jsoup.connect(url).get();		
+			docString = docs.outerHtml();
+			System.out.println(docString);
+			
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		Pattern pattern1 = Pattern.compile("\s*<span class=\\\"StopButton_Code__1hpBy\\\">[0-9]{4,}</span>");
+		
+		
+		
+		
+		Scanner scanner = new Scanner(docString);
+		while (scanner.hasNextLine()) {
+			String line = scanner.nextLine();
+			Matcher matcher = pattern1.matcher(line);
+			if (matcher.matches()) {
+				System.out.println(line);
+			}
+			
+		}
+		
+		
+	}
+
+}

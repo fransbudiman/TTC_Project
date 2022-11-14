@@ -1,0 +1,64 @@
+package Package1;
+
+import java.util.ArrayList;
+
+public class Trip {
+	
+	 String tripName;
+	 ArrayList<String> busArray;
+	 ArrayList<String> stopArray;
+	 
+	 public Trip(String tripName) {
+		 this.tripName = tripName;
+		 busArray = new ArrayList<String>();
+		 stopArray = new ArrayList<String>();
+		 
+	 }
+	 
+	 public void addStop(String busID, String stopID, Boolean direction) {
+		 
+		 BusStop obj = new BusStop(busID, stopID, direction);
+		 if (obj.jsonClass.docString.strip().equals("[]")) {
+			 System.out.println("Wrong Bus or Stop ID");
+		 }else {
+		 busArray.add(busID);
+		 stopArray.add(stopID);}
+	 }
+	 
+	 @SuppressWarnings("unlikely-arg-type")
+	public void removeStop(String busID, String stopID) {
+		 boolean found = false;
+		 Integer counter = 0;
+		 for(String n: busArray) {
+			 if(n.equals(busID)) {
+				 if(stopArray.get(counter).equals(stopID)) {
+					 
+					 busArray.remove(counter);
+					 stopArray.remove(counter);
+					 found = true;
+					 
+				 }
+			 }
+		 }
+		 
+		 if (found) {
+			 System.out.println("Delete Successful");
+		 }else {
+			 System.out.println("Bus or Stop not found");
+		 }
+
+	 }
+	 
+	 public void executeTrip() throws WrongInputException {
+		 for (int i = 0 ; i<busArray.size(); i++) {
+			 BusStop obj = new BusStop(busArray.get(i), stopArray.get(i));
+			 System.out.println("Bus: " + obj.busID + "   |   " + "Stop: " + obj.stopID);
+			 System.out.println("---------------------------");
+			 obj.displayTime();
+			 System.out.println("\n");
+			 
+		 }
+		 
+	 }
+	 
+}

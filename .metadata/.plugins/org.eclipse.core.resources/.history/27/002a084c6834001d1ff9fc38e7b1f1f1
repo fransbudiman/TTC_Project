@@ -1,0 +1,78 @@
+package Package1;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class JsonClass {
+	String url;
+	String docString;
+	JSONArray jsonArray;
+	
+	
+	public JsonClass(String url) {
+		this.url = url;
+	}
+	
+	public void setDocString() {
+		try {
+			final Document docs = Jsoup.connect(url).ignoreContentType(true).get();		
+			docString = docs.html();
+		
+		}catch(Exception ex) {
+			System.out.println("Error at Scraping");
+			ex.printStackTrace();
+		}
+	}
+	
+	
+	public void setJsonArray() {
+		this.cleanDocString();
+		try {
+		    JSONObject object = new JSONObject(docString);
+		    System.out.println("Object: " + object.toString());
+		    JSONArray simplified = object.getJSONObject("route").getJSONArray("routeBranchesWithStops");
+		    jsonArray = simplified;
+		    
+		    System.out.println("Setting Array Successful");
+		    
+		    }
+			catch(Exception e) {
+				System.out.println("Error at JSON Processing or Format");
+				System.out.println(e.getMessage());
+			}
+	}
+	
+	public void cleanDocString() {
+		
+		Integer index = docString.indexOf("{\"route\"");
+		System.out.println(index);
+		
+		docString = docString.substring(index);
+		Integer descIndexStart = docString.indexOf("\"description\"");
+		
+		Integer descIndexEnd = docString.indexOf("\"type\"");
+		
+		System.out.println(descIndexStart);
+		System.out.println(descIndexEnd);
+		
+		String removeText = "";
+		
+		while(descIndexStart< descIndexEnd) {
+			removeText += docString.charAt(descIndexStart);
+			descIndexStart ++;		
+		}
+		
+		docString = docString.replace(removeText, "");
+		docString = docString.replace("</body>", "");
+		docString = docString.replace("</html>", "");
+		//System.out.println(docString);
+		docString += "}";
+		
+	}
+	
+	
+	
+
+}

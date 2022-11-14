@@ -1,0 +1,25 @@
+package Package1;
+
+import javax.swing.text.Document;
+
+import org.jsoup.Jsoup;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		final String url = "https://webscraper.io/test-sites";
+		
+		try {
+			final Document docs =  Jsoup.connect(url).get();
+			
+			System.out.println(docs.outerHtml());
+			
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+	}
+
+}

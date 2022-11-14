@@ -1,0 +1,19 @@
+package Package1;
+
+public class BusStop {
+	
+	Integer busID;
+	Integer stopID;
+	String[] address;
+	JsonClass jsonClass;
+	
+	public BusStop(Integer busID, Integer stopID) {
+		this.busID = busID;
+		this.stopID = stopID;		
+	}
+	
+	public String[] findAddress() {
+		
+		return address;	
+	}
+}

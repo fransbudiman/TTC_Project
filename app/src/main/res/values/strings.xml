@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">TTCSC</string>
+    <string name="Name"></string>
+    <string name="UsernameTV">Username: </string>
+    <string name="ListItems_Button">GO</string>
+    <string name="Main_Button_Add">Add</string>
+    <string name="Main_Button_Remove">Edit</string>
+    <string name="Main_TV_BusHolder">Bus: </string>
+    <string name="title_activity_execute_trip">ExecuteTripActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Exec_TV_StopHolder">Stop: </string>
+    <string name="NewTrip_ET_TripName"></string>
+    <string name="NewTrip_Button_Submit">Submit</string>
+    <string name="Edit_Button_Done">Done</string>
+    <string name="BE_Button_DelTrip">Remove Trip</string>
+    <string name="BE_Button_AddStop">Add Stop</string>
+    <string name="BE_Button_RemoveStop">x</string>
+    <string name="addStop_ET_BusName"></string>
+    <string name="addStop_ET_StopName"></string>
+    <string name="addStop_Tog_Direction"></string>
+
+
+</resources>

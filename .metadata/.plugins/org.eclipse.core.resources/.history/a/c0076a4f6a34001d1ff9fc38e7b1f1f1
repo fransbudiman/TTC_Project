@@ -1,0 +1,158 @@
+package Package1;
+
+
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.net.MalformedURLException;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+
+
+public class Main {
+	
+	public static void main(String[] args)  {
+		
+		BusStop obj = new BusStop("995", "7694");
+		System.out.println("DONE");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		//System.out.println("Hello World");
+//		final String url = "https://www.ttc.ca/ttcapi/routedetail/get?id=38";
+//		String docString = "";
+//		try {
+//			final Document docs = Jsoup.connect(url).ignoreContentType(true).get();		
+//			docString = docs.html();
+//			//System.out.println(docString);
+//			
+//			
+//		}catch(Exception ex) {
+//			ex.printStackTrace();
+//		}
+//		
+//		
+//		Integer index = docString.indexOf("{\"route\"");
+//		System.out.println(index);
+//		
+//		docString = docString.substring(index);
+//		Integer descIndexStart = docString.indexOf("\"description\"");
+//		
+//		Integer descIndexEnd = docString.indexOf("\"type\"");
+//		
+//		System.out.println(descIndexStart);
+//		System.out.println(descIndexEnd);
+//		
+//		String removeText = "";
+//		
+//		while(descIndexStart< descIndexEnd) {
+//			removeText += docString.charAt(descIndexStart);
+//			descIndexStart ++;		
+//		}
+//		
+//		docString = docString.replace(removeText, "");
+//		docString = docString.replace("</body>", "");
+//		docString = docString.replace("</html>", "");
+//		//System.out.println(docString);
+//		docString += "}";
+//		
+//		
+//		
+//		try {
+//	    JSONObject object = new JSONObject(docString);
+//	    System.out.println("Object: " + object.toString());
+//	    JSONArray simplified = object.getJSONObject("route").getJSONArray("routeBranchesWithStops");
+//	    String Test = simplified.getJSONObject(2).getJSONArray("routeBranchStops").getJSONObject(0).getJSONArray("routeStopTimes").get(1).toString();
+//	    System.out.println(Test);
+//	    
+//	    
+//	    System.out.println("DONE");
+//	    
+//	    }
+//		catch(Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//	    
+//	   
+		
+		// TODO:  remove that section that causes the JSON error, add curly braces at start, remove body and html at end
+		
+		
+		
+//		String code = "7694";
+//		String regex = ".*code.*";
+//		
+//		Pattern pattern1 = Pattern.compile(regex);
+//		
+//		
+//		
+//		
+//		Scanner scanner = new Scanner(docString);
+//		while (scanner.hasNextLine()) {
+//			String line = scanner.nextLine();
+//			Matcher matcher = pattern1.matcher(line);
+//			if (matcher.matches()) {
+//				System.out.println(line);
+//			}
+//			
+//		}
+//		
+		
+		
+//		WebClient webClient = new WebClient();
+//		HtmlPage page = null;
+//		try {
+//			page = webClient.getPage("https://www.ttc.ca/routes-and-schedules#/995/0");
+//		} catch (FailingHttpStatusCodeException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+////		JavaScriptJobManager manager = page.getEnclosingWindow().getJobManager();
+////		while (manager.getJobCount() > 0) {
+////		    Thread.sleep(1000);
+////		}
+//		try {
+//			Thread.sleep(10000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		WebResponse response = page.getWebResponse();
+//		String content = response.getContentAsString();
+//		System.out.println(content);
+//		System.out.println("DONE");
+	}
+	
+	public String IdToAddress(Integer number, JSONArray jsonArray) {
+		
+		
+		
+		
+		return null;
+		
+	}
+
+}

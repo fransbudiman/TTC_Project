@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_add_stop_screen.xml" value="0.268" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_bus_edit_screen.xml" value="0.3" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_execute_trip.xml" value="0.268" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_main.xml" value="0.246875" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_new_trip_entry.xml" value="0.3" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/activity_trip_edit_screen.xml" value="0.3" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/list_be.xml" value="0.4" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/list_edit.xml" value="0.4" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/list_items.xml" value="0.44000000000000006" />
+        <entry key="..\:/UNIFRANS/Others/TTC_Project/app/src/main/res/layout/list_tripexec.xml" value="0.4" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

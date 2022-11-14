@@ -1,0 +1,57 @@
+package Package1;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class BusStop {
+	
+	String busID;
+	String stopID;
+	String[] address = new String[2];
+	JsonClass jsonClass;
+	
+	public BusStop(String busID, String stopID) {
+		this.busID = busID;
+		this.stopID = stopID;
+		this.setJson();
+		this.findAddress();
+	}
+	
+	public void setJson() {
+		String url = "https://www.ttc.ca/ttcapi/routedetail/get?id=";
+		url += busID;
+		JsonClass newJson = new JsonClass(url);
+		jsonClass = newJson;
+	}
+	public String[] findAddress() {
+		
+		Integer arrayLength = jsonClass.jsonArray.length();
+		Integer innerArrayLength;
+		System.out.println(arrayLength);
+		Boolean found = false;
+		
+		for (int i = 0 ; i<arrayLength; i++) {
+			
+			JSONArray outerShell = jsonClass.jsonArray.getJSONObject(i).getJSONArray("routeBranchStops");
+			innerArrayLength = outerShell.length();
+			for (int n = 0; n<innerArrayLength; n++) {
+				JSONObject innerShell = outerShell.getJSONObject(n);
+				if(innerShell.getString("code").equals(stopID)) {
+					address[0] = String.valueOf(i);
+					address[1] = String.valueOf(n);
+					found = true;
+					break;
+				}
+			}
+			if(found == true)break;
+		}
+		
+		if(found.equals(false)) {
+			System.out.println("Stop Code Not Found");
+			return null;
+		}
+		
+		System.out.println(address.toString());
+		return address;	
+	}
+}

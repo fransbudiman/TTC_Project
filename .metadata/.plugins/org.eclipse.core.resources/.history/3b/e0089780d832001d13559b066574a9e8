@@ -1,0 +1,82 @@
+package Package1;
+
+
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+
+
+public class Main {
+	
+	public static void main(String[] args)  {
+		//System.out.println("Hello World");
+		final String url = "https://www.ttc.ca/ttcapi/routedetail/get?id=995";
+		String docString = "";
+		try {
+			final Document docs = Jsoup.connect(url).ignoreContentType(true).get();		
+			docString = docs.html();
+			System.out.println(docString);
+			
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		String code = "7694";
+		String regex = "\"code\":\""+ code + "\"";
+		
+		Pattern pattern1 = Pattern.compile(regex);
+		
+		
+		
+		
+		Scanner scanner = new Scanner(docString);
+		while (scanner.hasNextLine()) {
+			String line = scanner.nextLine();
+			Matcher matcher = pattern1.matcher(line);
+			if (matcher.matches()) {
+				System.out.println(line);
+			}
+			
+		}
+		
+		
+		
+//		WebClient webClient = new WebClient();
+//		HtmlPage page = null;
+//		try {
+//			page = webClient.getPage("https://www.ttc.ca/routes-and-schedules#/995/0");
+//		} catch (FailingHttpStatusCodeException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+////		JavaScriptJobManager manager = page.getEnclosingWindow().getJobManager();
+////		while (manager.getJobCount() > 0) {
+////		    Thread.sleep(1000);
+////		}
+//		try {
+//			Thread.sleep(10000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		WebResponse response = page.getWebResponse();
+//		String content = response.getContentAsString();
+//		System.out.println(content);
+//		System.out.println("DONE");
+	}
+
+}

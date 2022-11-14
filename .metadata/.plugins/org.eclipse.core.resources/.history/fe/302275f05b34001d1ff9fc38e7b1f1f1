@@ -1,0 +1,11 @@
+package Package1;
+
+public class BusStop {
+	
+	Integer busID;
+	Integer stopID;
+	String[] address;
+	
+	
+
+}

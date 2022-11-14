@@ -1,0 +1,35 @@
+package Package1;
+
+
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.net.MalformedURLException;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+
+
+public class Main {
+	
+	public static void main(String[] args)  {
+		
+		Trip newTrip = new Trip("UTSC");
+		newTrip.addStop("995", "7694");
+		newTrip.addStop("95", "76999");
+		newTrip.addStop("38", "9604");
+		newTrip.executeTrip();
+		System.out.println("DONE");
+
+		
+
+		}
+	
+	
+}
