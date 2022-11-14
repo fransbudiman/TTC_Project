@@ -16,3 +16,6 @@ Future updates will expect:
 Unsolved bugs:
 1. crashes when internet not available
 2. some bugs when adding and removing the same bus stop ID in the edit screen before pressing done
+3. Bus Execute screen recycler view does not fill the entire page
+
+
