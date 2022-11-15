@@ -28,15 +28,15 @@
         android:hint="Bus ID"
         android:inputType="textPersonName"
         android:text="@string/addStop_ET_BusName"
-        app:layout_constraintBottom_toTopOf="@+id/addStop_ET_StopName"
+        app:layout_constraintBottom_toTopOf="@+id/addStop_ACTV_StopName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/addStop_ET_StopName"
+    <AutoCompleteTextView
+        android:id="@+id/addStop_ACTV_StopName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
@@ -58,5 +58,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

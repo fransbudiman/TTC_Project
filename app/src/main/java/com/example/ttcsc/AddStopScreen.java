@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.File;
@@ -44,7 +43,7 @@ public class AddStopScreen extends AppCompatActivity {
     public void commitStop(){
         EditText busNameText = findViewById(R.id.addStop_ET_BusName);
         busName = busNameText.getText().toString();
-        EditText stopNameText = findViewById(R.id.addStop_ET_StopName);
+        EditText stopNameText = findViewById(R.id.addStop_ACTV_StopName);
         stopName = stopNameText.getText().toString();
         ToggleButton directionToggle = findViewById(R.id.addStop_Tog_Direction);
         if(directionToggle.isChecked()){
