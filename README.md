@@ -1,6 +1,4 @@
 # TTC_Project
-yes...
-
 Android app that tells you when the next TTC bus will arrive. Because opening your SMS and typing down the code is too troublesome.
 
 Currently, this app can:
